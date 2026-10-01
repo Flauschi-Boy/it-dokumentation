@@ -1,20 +1,9 @@
-# Windows Server – Rollen und Features
+# Windows Server Rollen
 
-## 1. Was sind Rollen?
-Rollen erweitern einen Windows Server um zentrale Netzwerkdienste (z. B. AD DS, DNS, DHCP).
-Sie werden über den Server-Manager oder PowerShell (`Install-WindowsFeature`) installiert.
-Pro Server sollten nur benötigte Rollen installiert werden (Sicherheit, Performance).
+Rollen sind beim Windows Server einfach die Dienste, die du nachinstallierst. Geht über den Server-Manager oder schnell per PowerShell. Ehrlich gesagt nur installieren was man wirklich braucht, Rest macht die Kiste nur angreifbar und langsam.
 
-## 2. Wichtige Rollen im Überblick
-- **AD DS (Active Directory Domain Services):** zentrale Benutzer-, Gruppen- und Computerverwaltung, Kerberos-Authentifizierung.
-- **DNS:** Namensauflösung (Hostname zu IP), Voraussetzung für AD DS.
-- **DHCP:** automatische Vergabe von IP-Adressen, Gateway und DNS an Clients.
-- **Datei- und Speicherdienste:** Freigaben (SMB), NTFS-Berechtigungen, Kontingente.
-- **Webserver (IIS):** Hosting von Webseiten und Webanwendungen.
-- **Hyper-V:** Virtualisierung von Gastsystemen auf dem Host.
-- **Print Services:** zentraler Druckserver mit Treiberverteilung.
+AD DS ist das zentrale Ding für Benutzer, Gruppen und Rechner in der Domäne. Läuft nur sauber mit DNS zusammen, das gehört also fast immer dazu. DHCP verteilt dann IP, Gateway und DNS an die Clients, spart ne Menge Handarbeit.
 
-## 3. Best Practices
-Rollen nach Funktion auf Server verteilen (z. B. DC + DNS/DHCP getrennt von Fileserver).
-Regelmäßig Updates einspielen und nur benötigte Firewall-Ports freigeben.
-Änderungen und Konfigurationen in dieser Dokumentation festhalten.
+Dazu kommen noch die Klassiker. Dateidienste für Freigaben per SMB mit NTFS-Rechten, IIS wenn du Webseiten hosten willst, Hyper-V für VMs und Druckdienste wenn du Drucker zentral verwalten willst.
+
+Wir trennen das so gut es geht, also DC mit DNS/DHCP extra und Fileserver extra. Updates rein, Firewall nur das nötigste auf, und Änderungen kurz hier festhalten.

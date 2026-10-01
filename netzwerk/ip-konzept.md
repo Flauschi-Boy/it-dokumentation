@@ -1,25 +1,11 @@
-# IP-Konzept (IPv4 Grundlagen)
+# IP-Konzept IPv4
 
-## 1. Grundlagen der IPv4-Adressierung
-Eine IPv4-Adresse ist 32 Bit lang und wird in 4 Oktetten zu je 8 Bit dargestellt (z. B. `192.168.1.10`).
-Der Adressraum umfasst ca. 4,3 Milliarden Adressen.
+IPv4 ist im Grunde immer noch das, womit man täglich zu tun hat. Eine Adresse hat 32 Bit, also vier Blöcke wie 192.168.1.10. Reicht rechnerisch für ca. 4,3 Milliarden Adressen, was halt längst zu wenig ist, aber läuft trotzdem überall.
 
-## 2. Aufbau: Netzwerk- und Hostanteil
-Jede IP-Adresse besteht aus einem Netzwerkanteil und einem Hostanteil.
-Die Subnetzmaske (z. B. `255.255.255.0` bzw. `/24`) legt fest, welcher Teil zum Netzwerk gehört.
-Alle Hosts im gleichen Netz teilen sich den Netzwerkanteil.
+Aufgebaut ist das immer gleich, vorne Netzanteil, hinten Hostanteil. Die Subnetzmaske sagt dir, wo getrennt wird. Klassiker ist 255.255.255.0, also /24. Heißt alle mit gleichem Netzanteil sind im selben Netz.
 
-## 3. Private und öffentliche Adressen
-Private Bereiche (RFC 1918): `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`.
-Private Adressen werden nur intern geroutet und per NAT ins Internet übersetzt.
+Dann gibts privat und öffentlich. Privat ist 10.0.0.0/8, 172.16.0.0/12 und 192.168.0.0/16. Die nimmst du intern, raus gehts dann über NAT. Öffentliche kriegst du vom Provider.
 
-## 4. Sonderadressen
-- `127.0.0.1`: Loopback (localhost)
-- `0.0.0.0/0`: Standardroute
-- `255.255.255.255`: Broadcast
-- APIPA `169.254.0.0/16`: automatische Adresse bei fehlendem DHCP
+Paar Sonderfälle muss man kennen. 127.0.0.1 ist localhost, 255.255.255.255 Broadcast, und 169.254.x.x kriegst du automatisch wenn kein DHCP antwortet. Da stimmt dann meist was nicht.
 
-## 5. Subnetting-Beispiel
-Netz `192.168.1.0/24`: 254 nutzbare Hosts (`192.168.1.1` bis `192.168.1.254`).
-Netz-ID: `192.168.1.0`, Broadcast: `192.168.1.255`.
-Gateway (z. B. `.1`) und DNS müssen auf Clients korrekt konfiguriert sein (statisch oder per DHCP).
+Beispiel aus der Praxis: 192.168.1.0/24. Netz-ID ist .0, Broadcast .255. Nutzen kannst du .1 bis .254, also 254 Hosts. Gateway liegt meist auf der .1, DNS und IP kommen per DHCP oder du trägst sie von Hand ein.

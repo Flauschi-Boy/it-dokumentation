@@ -1,10 +1,7 @@
 # IT-Dokumentation
 
-Zentrale Ablage für Netzwerk- und Server-Dokumentation im Rahmen der Ausbildung / des IT-Betriebs.
+Hier liegt unsere Doku für Netzwerk und Server, also im Grunde alles was man später nochmal nachlesen will.
 
-## Struktur
-- `netzwerk/ip-konzept.md` – IP-Adressierung (IPv4 Grundlagen, Subnetzmaske, private Adressen, Subnetting-Beispiel)
-- `server/windows-server.md` – Windows Server Rollen (AD DS, DNS, DHCP, Datei- und Druckdienste, IIS, Hyper-V)
+Unter netzwerk/ip-konzept.md steht das mit IPv4, Adressen, Subnetz und so. Unter server/windows-server.md gehts um die Server-Rollen wie AD, DNS, DHCP usw.
 
-## Verwendung
-Dokumentation fortlaufend pflegen und Änderungen per Git versionieren (`add`, `commit`, `push`).
+Einfach aktuell halten und per add, commit, push hochladen, dann bleibt das hier brauchbar.
