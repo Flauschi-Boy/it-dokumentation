@@ -1,9 +1,9 @@
 # Merge-Konflikt Doku
 
-Hab das mit zwei Branches nachgestellt, weil kein zweiter Rechner da war. Also im Grunde Zusammenarbeit simuliert.
+Wir haben die README zu zweit bearbeitet, jeder auf seinem eigenen Branch. Ich auf partner-a, mein Partner auf partner-b.
 
-Wie ist das passiert: beide Branches sind vom gleichen Stand gestartet. partner-a und partner-b haben dann die gleiche Zeile in der README geändert, halt jeder anders. partner-a zuerst in main gemergt, das ging noch glatt. Beim zweiten Merge mit partner-b hat Git dann gemeckert, weil es nicht wusste welche Version stimmen soll. Klassischer Konflikt in README.md mit den <<<<<<< ======= Markern.
+Wie ist das passiert: beide Branches sind vom gleichen Stand in main gestartet. Wir haben dann gleichzeitig die Einleitung in der README geändert, halt jeder anders. partner-a wurde zuerst in main gemergt, das ging noch glatt. Beim Merge von partner-b hat Git dann gestoppt, weil es nicht wusste welche Version stimmen soll. Klassischer Konflikt in README.md mit den <<<<<<< ======= Markern.
 
-Gelöst hab ichs so: Datei aufgemacht, beide Zeilen angeschaut und zu einer zusammengefasst statt eine einfach zu löschen. Danach add und commit, damit war der Merge fertig.
+Gelöst haben wir das so: wir haben uns die beiden Zeilen zusammen angeschaut und zu einer zusammengefasst statt eine einfach zu löschen. Danach add und commit, damit war der Merge fertig und beide Änderungen drin.
 
-Befehle die dabei liefen: git checkout -b partner-a / partner-b für die zwei Stände, dann git add und git commit pro Branch, git checkout main und git merge partner-a, danach git merge partner-b wo es geknallt hat. Zum Fixen dann README von Hand angepasst, wieder git add README.md und git commit. Zum Schluss git push und mit git log --graph und git status kontrolliert.
+Befehle die dabei liefen: git checkout -b partner-a / partner-b für die zwei Stände, dann git add und git commit pro Branch, git checkout main und git merge partner-a, danach git merge partner-b wo es geknallt hat. Zum Fixen dann README zusammen angepasst, wieder git add README.md und git commit. Zum Schluss git push und mit git log --graph und git status kontrolliert.
